@@ -20,17 +20,16 @@
     
 import json
 
-student = [
+students = [
     {'name': 'Hieu', 'score': 90},
     {'name': 'Anna', 'score': 85}
 ]
 
 with open('students.json', 'w') as file:
-    json.dump(student, file, indent=4)
+    json.dump(students, file, indent=4)
 print("JSON saved")
 
 with open('students.json', 'r') as file:
-    read_student = json.load(file)
-    for student in read_student:
+    read_students = json.load(file)
+    for student in read_students:
         print(f'{student["name"]} - {student["score"]}')
-        
