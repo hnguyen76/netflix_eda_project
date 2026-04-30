@@ -101,64 +101,64 @@
 #     else:
 #         print('Invalid Selection')
 
-# contacts = []
+contacts = []
 
-# while True:
-#     print('1. Add contact')  
-#     print('2. View contact')
-#     print('3. Delete contact')
-#     print('4. Search contact')
-#     print('5. Quit')
+while True:
+    print('1. Add contact')  
+    print('2. View contact')
+    print('3. Delete contact')
+    print('4. Search contact')
+    print('5. Quit')
 
-#     i = input('Your selection: ')
+    i = input('Your selection: ')
 
-#     if i == '1':
-#         name = input('What is your name?: ')
-#         phone = input('What is your phone number?: ')
-#         contact = f'{name}, {phone}'
-#         contacts.append(contact)
+    if i == '1':
+        name = input('What is your name?: ')
+        phone = input('What is your phone number?: ')
+        contact = f'{name}, {phone}'
+        contacts.append(contact)
 
-#     elif i == '2':
-#         if not contacts:
-#             print('Empty contact list')
-#         else:
-#             for number, con in enumerate(contacts, 1):
-#                 print(f"{number}. {con}")
+    elif i == '2':
+        if not contacts:
+            print('Empty contact list')
+        else:
+            for number, con in enumerate(contacts, 1):
+                print(f"{number}. {con}")
 
-#     elif i == '3':
-#         if not contacts:
-#             print('Empty contact list')
-#         else:
-#             for number, con in enumerate(contacts, 1):
-#                 print(f"{number}. {con}")
+    elif i == '3':
+        if not contacts:
+            print('Empty contact list')
+        else:
+            for number, con in enumerate(contacts, 1):
+                print(f"{number}. {con}")
 
-#             try:
-#                 delete_number = int(input("Which contact number do you want to delete? "))
-#                 deleted_contact = contacts.pop(delete_number - 1)
-#                 print(f"Deleted: {deleted_contact}")
-#             except ValueError:
-#                 print("Please enter a valid number.")
-#             except IndexError:
-#                 print("That contact number does not exist.")
-#     elif i == '4':
-#         if not contacts:
-#             print('Empty contact list')
-#         else:
-#             search_name = input('Enter name to search: ')
-#             found = False
+            try:
+                delete_number = int(input("Which contact number do you want to delete? "))
+                deleted_contact = contacts.pop(delete_number - 1)
+                print(f"Deleted: {deleted_contact}")
+            except ValueError:
+                print("Please enter a valid number.")
+            except IndexError:
+                print("That contact number does not exist.")
+    elif i == '4':
+        if not contacts:
+            print('Empty contact list')
+        else:
+            search_name = input('Enter name to search: ')
+            found = False
            
-#             for contact in contacts:
-#                 if search_name.lower() in contact.lower():
-#                     print(f'{contact} is found')
-#                     found = True
+            for contact in contacts:
+                if search_name.lower() in contact.lower():
+                    print(f'{contact} is found')
+                    found = True
                 
-#             if not found:
-#                 print('No contact found')    
+            if not found:
+                print('No contact found')    
 
-#     elif i == '5':
-#         break
+    elif i == '5':
+        break
 
-#     else:
-#         print('Invalid Selection')
+    else:
+        print('Invalid Selection')
 
 
