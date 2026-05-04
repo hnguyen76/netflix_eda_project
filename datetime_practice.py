@@ -25,21 +25,45 @@
 #     print('Contact added!')
     
     
-from datetime import datetime, timedelta
+# from datetime import datetime, timedelta
+# while True:
+#     try:
+#         task = input('Task name: ')
+#         deadline = int(input('due date (number only no negative number): '))
+
+#         if deadline < 0:
+#            print('Please enter a non-negative number.')
+#            continue
+        
+#         due_date = datetime.now() + timedelta(days=deadline)
+
+#         print(f'Task: {task}')
+#         print(f'Due date: {due_date.strftime("%Y-%m-%d")}') 
+#         break
+    
+#     except ValueError:
+#         print('Please enter a valid number. ')
+
+
+from datetime import datetime
 while True:
     try:
         task = input('Task name: ')
-        deadline = int(input('due date (number only no negative number): '))
-
-        if deadline < 0:
-           print('Please enter a non-negative number.')
-           continue
+        deadline = input('Please input your deadline date (YYYY-MM-DD): ')
         
-        due_date = datetime.now() + timedelta(days=deadline)
-
-        print(f'Task: {task}')
-        print(f'Due date: {due_date.strftime("%Y-%m-%d")}') 
+        deadline_date = datetime.strptime(deadline, "%Y-%m-%d").date()
+        today = datetime.now().date()
+        days_left = deadline_date - today
+        delta = days_left.days
+        if delta < 0:
+            print(f'{task} is overdue')
+        elif delta == 0:
+            print(f'{task} is due today')
+        else:
+            print(f'{task} has {delta} days left')
+        
         break
     
     except ValueError:
-        print('Please enter a valid number. ')
+        print('Please use YYYY-MM-DD format.')
+        
